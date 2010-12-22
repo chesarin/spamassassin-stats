@@ -14,7 +14,12 @@ $z = new IO::Uncompress::Bunzip2 $input
 
 print "$input\n";
 print "hello\n";
+my $counter;
+while ( $z ){
+      $line = $z->getline();
+      print $line;
+} 
 
-$line = $z->getline();
+#$line = $z->getline();
 
-print "$line";
+#print "$line";
