@@ -11,9 +11,12 @@ my $counter = 0;
 my $line;
 while ( !$z->eof() ){
       $line = $z->getline();
-      if ($line =~ m/smtpfilter/) {
-	  $counter++;
-      } 
+      $counter++;
+#      $counter++ if $line =~ m/smtpfilter/;
+#      if ($line =~ m/smtpfilter/) {
+#	  $counter++;
+#	  print "$' \n";
+#      } 
 } 
 print "Counter is : $counter\n";
 
