@@ -18,7 +18,7 @@ for line in udata:
 #print line1;
 #print line2;
 
-print "The total number of lines is ",sentinel1 ," And the number of smtpfilter lines is ",sentinel2;
+#print "The total number of lines is ",sentinel1 ," And the number of smtpfilter lines is ",sentinel2;
 
 udata.close();
 
