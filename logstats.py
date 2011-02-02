@@ -1,20 +1,25 @@
 #!/usr/bin/env python
 import bz2;
+import re;
 
 udata = bz2.BZ2File("spamlog.20101222.bz2",'r');
-sentinel=0;
+sentinel1=0;
+sentinel2=0;
 
 for line in udata:
-    sentinel += 1;
-    if sentinel == 1:
-        line1 = line;
-    elif sentinel == 2:
-        line2 = line;
+    sentinel1 += 1;
+    if re.search('smtpfilter',line):
+        sentinel2 += 1;
+        if sentinel2 == 1:
+            line1 = line;
+        elif sentinel2 == 2:
+            line2 = line;
 
 #print line1;
 #print line2;
 
-#print "The total number of lines is ",sentinel;
+print "The total number of lines is ",sentinel1 ," And the number of smtpfilter lines is ",sentinel2;
+
 udata.close();
 
 
