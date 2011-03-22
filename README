@@ -7,4 +7,17 @@ Analysing logs:
 1.Search for smtpfilter entries on the logs. These are the entries that are essential
 to know what is smtpfilter doing.
 
+How do we identify a particular process?
+Well, the ideal would be for each process to be unique. This
+uniqueness is based on machine name and process id within that machine.
+For example the following gives the process id on logs:
+smtpfilter[13035]
+The problems with that is that there might be more than one 13035 since
+we have more than one machine that can create the same process.
+The other way to solve this is by adding the machine name to it.
+
+cerebro-spam smtpfilter[13035]
+
+This will give a unique identity to each email process by smptfilter.
+
 2.There is an id for each smtpfilter entry. 
